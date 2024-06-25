@@ -50,6 +50,7 @@ const Footer = () => {
               <p>Email</p>
               <div>
                 <p>contact@agelgileco-package.com</p>
+                <p>afomia.a@agelgileco-package.com</p>
                 <p>agelgilecopackaging@gmail.com</p>
               </div>
             </div>

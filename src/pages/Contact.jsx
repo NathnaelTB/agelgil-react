@@ -34,8 +34,15 @@ const Contact = (props) => {
               <div>
                 <p className="text-xl font-bold">Email</p>
                 <div className="muted ml-3">
-                  <p>contact@agelgileco-package.com</p>
-                  <p>agelgilecopackaging@gmail.com</p>
+                  <a href="mailto:contact@agelgileco-package.com">
+                    <p>contact@agelgileco-package.com</p>
+                  </a>
+                  <a href="mailto:afomia.a@agelgileco-package.com">
+                    <p>afomia.a@agelgileco-package.com</p>
+                  </a>
+                  <a href="mailto:agelgilecopackaging@gmail.com">
+                    <p>agelgilecopackaging@gmail.com</p>
+                  </a>
                 </div>
               </div>
 
@@ -43,8 +50,8 @@ const Contact = (props) => {
               <div>
                 <p className="text-xl font-bold">Location</p>
                 <div className="muted ml-3">
-                  <p className='muted'>Ethiopia, Bahir Dar</p>
-                  <p className='muted'>Lemlemitu Bahir Dar Commercial Center</p>
+                  <p className="muted">Ethiopia, Bahir Dar</p>
+                  <p className="muted">Lemlemitu Bahir Dar Commercial Center</p>
                 </div>
               </div>
 
@@ -84,7 +91,10 @@ const Contact = (props) => {
             {/* contact Form  */}
 
             <div>
-              <form action="https://formsubmit.co/afomia@agelgileco-package.com" method="post">
+              <form
+                action="https://formsubmit.co/afomia@agelgileco-package.com"
+                method="post"
+              >
                 <input
                   type="text"
                   name="Name"
