@@ -3,6 +3,7 @@ import news from '../data/news'
 import { Link } from 'react-router-dom'
 import { Icon } from '@iconify/react'
 import Mentions from '../components/Mentions'
+import Vacancy from '../components/Vacancy'
 
 
 import { BsNewspaper } from 'react-icons/bs'
@@ -13,6 +14,7 @@ const NewsPage = () => {
   return (
     <>
       <section className="w-screen mt-20">
+        <Vacancy />
         <Mentions></Mentions>
         <div className="container py-7">
 
