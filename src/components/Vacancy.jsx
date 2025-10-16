@@ -13,8 +13,8 @@ const Vacancy = () => {
         />
 
         <p className="py-7 text-justify md:w-[50%] w-[80%]">
-          Job Vacancy: Marketing Officer (2 Positions) <br /> <br />
-          📍 Location: Bahir Dar, Ethiopia <br /> <br /> 🏢 Company: Agelgil Eco
+          <b>Job Vacancy: Marketing Officer (2 Positions)</b> <br /> <br />
+          <b>📍 Location: </b>Bahir Dar, Ethiopia <br /> <br /> <b>🏢 Company:</b> Agelgil Eco
           Packaging Agelgil Eco Packaging, an eco-friendly packaging
           manufacturer based in Bahir Dar, is looking for two experienced
           Marketing Officers to join our growing team. We produce sustainable
@@ -52,11 +52,12 @@ const Vacancy = () => {
               Work closely with the sales and production teams to ensure
               marketing goals are met.
             </li>
-
-            <li>
-              Requirements Proven experience in marketing or sales (minimum 2
-              years).
-            </li>
+          </ul>
+          
+          <br />
+          <b>Requirements</b>
+          <ul className="list-disc">
+            <li>Proven experience in marketing or sales (minimum 2 years).</li>
 
             <li>
               Strong communication, negotiation, and customer relationship
