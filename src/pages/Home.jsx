@@ -4,6 +4,7 @@ import News from '../components/News'
 import Message from '../components/Message'
 import HoverDevCards from '../components/HoverDevCards'
 import backgroundImage from '../../public/n2.jpg'
+import Vacancy from '../components/Vacancy'
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       {/* <Feature /> */}
 
       <Message></Message>
+      <Vacancy />
       <News />
     </div>
   )
