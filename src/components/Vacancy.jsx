@@ -41,6 +41,9 @@ const Vacancy = () => {
 
             <li>
               Organize marketing campaigns, exhibitions, and product promotions.
+            </li>
+
+            <li>
               Collect customer feedback and market data to improve product and
               service quality.
             </li>
