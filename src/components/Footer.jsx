@@ -1,95 +1,73 @@
-import {Link} from "react-router-dom";
-import {Icon} from '@iconify/react'
+import { Link } from "react-router-dom";
+import { Icon } from '@iconify/react'
 
 const Footer = () => {
   return (
-    <>
-      <section className="bg-black text-white p-4  w-screen">
-        <div className="grid grid-cols-1  md:grid-cols-3 container">
-          <div>
-            <p>Location</p>
-            <p>Lemlemitu Bahir Dar Commercial Center</p>
+    <footer className="bg-gray-900 text-gray-300 w-screen pt-16 pb-8">
+      <div className="container grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
 
-            <div className="mt-3">
-              <p>Address</p>
-              <div>
-                <p>+251936337889</p>
-                <p>+251966206636</p>
-                <p>+251966206640</p>
-              </div>
-            </div>
+        {/* Branding Section */}
+        <div className="flex flex-col items-center md:items-start text-center md:text-left mx-auto w-full md:w-auto">
+          <h2 className="text-2xl font-bold text-white mb-4 custom_font">Agelgil</h2>
+          <p className="text-sm leading-relaxed mb-6 max-w-xs">
+            Pioneering sustainable packaging solutions in Ethiopia. We turn agricultural waste into eco-friendly value.
+          </p>
+          <div className="flex space-x-4">
+            <a href="https://www.linkedin.com/company/agelgil-eco-packaging/" className="hover:text-brown transition-colors">
+              <Icon icon="devicon:linkedin" width="24" />
+            </a>
+            <a href="https://m.me/agelgil.packaging" className="hover:text-brown transition-colors">
+              <Icon icon="devicon:facebook" width="24" />
+            </a>
+            <a href="https://api.whatsapp.com/message/UGIQ5QDVEFG5A1" className="hover:text-brown transition-colors">
+              <Icon icon="logos:whatsapp-icon" width="24" />
+            </a>
           </div>
+        </div>
 
-          <div>
-            <p>Site map</p>
-            <div>
-              <div>
-                <Link className="hover:border-b-brown" to="/">
-                  Home
-                </Link>
-                <Link className="hover:border-b-brown" to="/product">
-                  Our products
-                </Link>
-              </div>
-              <div>
-                <Link to="/impact">Our Impact</Link>
-              </div>
-              <div>
-                <Link to="/about">About Us</Link>
-              </div>
-              <div>
-                <Link to="/contact">Contact Us</Link>
-              </div>
-            </div>
+        {/* Quick Links */}
+        <div className="flex flex-col items-center md:items-start text-center md:text-left mx-auto w-full md:w-auto">
+          <h3 className="text-white font-semibold mb-6 uppercase tracking-wider text-sm">Quick Links</h3>
+          <div className="flex flex-col space-y-3 text-sm w-full">
+            <Link className="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block" to="/">Home</Link>
+            <Link className="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block" to="/product">Our Products</Link>
+            <Link className="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block" to="/impact">Our Impact</Link>
+            <Link className="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block" to="/about">About Us</Link>
           </div>
+        </div>
 
-          <div>
-            {/* phone */}
-
-            <div className="mt-3">
-              <p>Email</p>
-              <div>
-                <p>contact@agelgileco-package.com</p>
-                <p>afomia.a@agelgileco-package.com</p>
-                <p>agelgilecopackaging@gmail.com</p>
+        {/* Contact Info */}
+        <div className="flex flex-col items-center md:items-start text-center md:text-left mx-auto w-full md:w-auto">
+          <h3 className="text-white font-semibold mb-6 uppercase tracking-wider text-sm">Contact Us</h3>
+          <div className="space-y-4 flex flex-col items-center md:items-start">
+            <div className="flex items-start justify-center md:justify-start">
+              <Icon icon="mdi:map-marker" className="text-brown text-xl mr-3 mt-1 flex-shrink-0" />
+              <span>Lemlemitu Bahir Dar Commercial Center,<br /> Bahir Dar, Ethiopia</span>
+            </div>
+            <div className="flex flex-col md:items-start text-center md:text-left">
+              <div className="flex items-center justify-center md:justify-start">
+                <Icon icon="mdi:phone" className="text-brown text-xl mr-3 flex-shrink-0" />
+                <span>+251 936 337 889</span>
+              </div>
+              <div className="flex items-center justify-center md:justify-start md:ml-8 mt-1">
+                <span>+251 966 206 636</span>
+              </div>
+              <div className="flex items-center justify-center md:justify-start md:ml-8 mt-1">
+                <span>+251 966 206 640</span>
               </div>
             </div>
-
-            {/* Links */}
-
-            <div className="mt-3 flex space-x-3">
-              <a href="mailto:contact@agelgileco-package.com/">
-                <div className="flex space-x-2 items-center">
-                  <Icon icon="mdi:email-outline" width="30" />
-                  {/* <span>Send Email</span> */}
-                </div>
-              </a>
-
-              <a href="https://www.linkedin.com/company/agelgil-eco-packaging/">
-                <div className="flex space-x-2">
-                  <Icon icon="devicon:linkedin" width="30" />
-                  {/* <p>LinkedIn</p> */}
-                </div>
-              </a>
-
-              <a href="https://m.me/agelgil.packaging">
-                <div className="flex space-x-2">
-                  <Icon icon="devicon:facebook" width="30" />
-                  {/* <p>Facebook</p> */}
-                </div>
-              </a>
-
-              <a href="https://api.whatsapp.com/message/UGIQ5QDVEFG5A1?autoload=1&app_absent=0">
-                <div className="flex space-x-2">
-                  <Icon icon="logos:whatsapp-icon" width="30" />
-                  {/* <p>Whatsapp</p> */}
-                </div>
-              </a>
+            <div className="flex items-center justify-center md:justify-start">
+              <Icon icon="mdi:email" className="text-brown text-xl mr-3 flex-shrink-0" />
+              <span>contact@agelgileco-package.com</span>
             </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+
+      <div className="container pt-8 border-t border-gray-800 text-center text-sm text-gray-500">
+        <p>© {new Date().getFullYear()} Agelgil Eco Packaging. All rights reserved.</p>
+      </div>
+    </footer>
   );
 };
 
