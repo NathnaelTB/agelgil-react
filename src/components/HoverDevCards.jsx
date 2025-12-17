@@ -39,16 +39,16 @@ const Card = ({ title, subtitle, Icon, href }) => {
     return (
         <a
             href={href}
-            className="w-full p-4 rounded border-[1px] border-slate-300 relative overflow-hidden group bg-white"
+            className="w-full p-6 rounded-2xl border border-gray-100 relative overflow-hidden group bg-white shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
         >
-            <div className="absolute inset-0 bg-gradient-to-r orange-700 to-orange-700 translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-300" />
+            <div className="absolute inset-0 bg-gradient-to-r from-brown to-darkGreen translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-300" />
 
-            <Icon className="absolute z-10 -top-12 -right-12 text-9xl text-slate-100 group-hover:text-violet-400 group-hover:rotate-12 transition-transform duration-300" />
-            <Icon className="mb-2 text-2xl group-hover:text-black transition-colors relative z-10 duration-300" />
-            <h3 className="font-medium text-lg text-slate-950 group-hover:text-black relative z-10 duration-300">
+            <Icon className="absolute z-10 -top-12 -right-12 text-9xl text-gray-50 group-hover:text-white/20 group-hover:rotate-12 transition-transform duration-300" />
+            <Icon className="mb-4 text-3xl text-brown group-hover:text-white transition-colors relative z-10 duration-300" />
+            <h3 className="font-semibold text-xl text-gray-800 group-hover:text-white relative z-10 duration-300 mb-2">
                 {title}
             </h3>
-            <p className="text-gray-500 group-hover:text-black relative z-10 duration-300">
+            <p className="text-gray-600 group-hover:text-white/90 relative z-10 duration-300 text-sm leading-relaxed">
                 {subtitle}
             </p>
         </a>

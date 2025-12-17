@@ -47,10 +47,10 @@ const Hero = () => {
   return (
     <section className="section bg-center bg-cover bg-fixed bg-hero w-screen h-screen flex justify-center items-center" style={{ backgroundImage: `url(${hero})` }}  >
       <div className='w-full h-full bg-black/70 flex flex-col justify-center items-center'>
-        <h1 ref={titleRef} className="text-white text-4xl  md:text-7xl thin">Agelgil Eco Packaging</h1>
-        <p ref={subtitleRef} className='text-white text-xl  md:text-3xl thin py-4'>Packaging with Consideration</p>
+        <h1 ref={titleRef} className="text-white text-5xl md:text-8xl thin tracking-wide drop-shadow-md">Agelgil Eco Packaging</h1>
+        <p ref={subtitleRef} className='text-white text-xl md:text-3xl thin py-6 tracking-wider opacity-90'>Packaging with Consideration</p>
         <div ref={lineRef} className="line bg-white w-1 h-36"></div>
-        <button ref={btnRef} className='bg-transparent border px-4 py-2 mt-3 text-white'>Contact Us</button>
+        <button ref={btnRef} className='bg-brown text-white px-8 py-3 rounded-full font-medium hover:bg-darkGreen transition-all duration-300 shadow-lg hover:shadow-xl mt-6 transform hover:-translate-y-1'>Contact Us</button>
       </div>
     </section>
   );
