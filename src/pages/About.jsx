@@ -1,114 +1,72 @@
 import group from '../assets/group.jpg'
-import {Icon} from '@iconify/react'
+import { Icon } from '@iconify/react'
 import Team from "../components/Team";
 
 
 const About = () => {
   return (
     <>
-      <section className="section">
-        <div className="w-screen h-[50vh] overflow-hidden">
-          <img
-            src={group}
-            alt="team members of agelgil"
-            loading="lazy"
-            className="object-cover h-full w-full object-top"
-          />
+      <section className="min-h-screen bg-gray-50 pb-10">
+        {/* Hero Section */}
+        <div className="relative h-[60vh] w-full mb-20">
+          <div className="absolute inset-0">
+            <img src={group} alt="Agelgil Team" className="w-full h-full object-cover object-top" />
+            <div className="absolute inset-0 bg-black/60"></div>
+          </div>
+          <div className="relative z-10 container h-full flex flex-col justify-center items-center text-center text-white">
+            <h1 className="text-5xl md:text-7xl font-bold tracking-wide mb-6">Who We Are</h1>
+            <p className="text-xl md:text-2xl max-w-2xl font-medium drop-shadow-md">Pioneering sustainable packaging solutions for a better tomorrow.</p>
+          </div>
         </div>
 
-        <div className="container my-4">
-          <p className="text-center text_section_title py-4">
-            What we stand for?
-          </p>
-          <p className="muted">
-            At Agelgil Eco Packaging, we are more than a brand – we are a
-            commitment to sustainable packaging excellence. With a deep-rooted
-            passion for environmental responsibility, we've pioneered packaging
-            solutions that reflect our unwavering dedication to a greener
-            future. As we embark on this journey, our mission, vision, and
-            values serve as our guiding compass, inspiring us to create
-            innovative, eco-conscious packaging that not only protects products
-            but also nurtures our planet. Explore our commitment to quality,
-            creativity, and sustainability as you delve into our core beliefs
-            and the principles that drive us forward.
-          </p>
+        <div className="container relative z-10 -mt-32 mb-20">
+          <div className="bg-white rounded-3xl shadow-xl p-10 md:p-16 text-center border border-gray-100">
+            <h2 className="text-3xl font-bold text-gray-800 mb-8">What We Stand For</h2>
+            <div className="h-1 w-20 bg-brown mx-auto mb-8 rounded-full"></div>
+            <p className="text-gray-600 text-lg leading-loose max-w-4xl mx-auto">
+              At Agelgil Eco Packaging, we are more than a brand – we are a commitment to sustainable packaging excellence. With a deep-rooted passion for environmental responsibility, we've pioneered packaging solutions that reflect our unwavering dedication to a greener future. As we embark on this journey, our mission, vision, and values serve as our guiding compass.
+            </p>
+          </div>
         </div>
 
-        <div className="bg-stone-200 py-5">
-          <div className="grid gap-4 md:grid-cols-3 container">
+        <div className="container mb-0">
+          <div className="grid gap-8 md:grid-cols-3">
             {/* Mission */}
-            <div className="card shadow-md bg-white p-3 rounded-md">
-              <div className="flex space-x-3 items-center justify-center">
-                <Icon
-                  icon="ant-design:aim-outlined"
-                  className="text-darkGreen"
-                  width="30"
-                />
-                <p className="text_gradient text-center font-bold text-2xl">
-                  Mission
-                </p>
+            <div className="group bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+              <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mb-6 text-darkGreen group-hover:bg-darkGreen group-hover:text-white transition-colors duration-300">
+                <Icon icon="ant-design:aim-outlined" width="32" />
               </div>
-              <hr />
-              <p className="p-2">
-                At Agelgil Eco Packaging, our mission is to revolutionize the
-                packaging industry by delivering innovative and sustainable
-                solutions that embody our commitment to both quality and
-                environmental stewardship. Through a relentless pursuit of
-                excellence, we aim to empower brands to make responsible choices
-                while enhancing the value of their products
+              <h3 className="text-2xl font-bold text-gray-800 mb-4 group-hover:text-brown transition-colors">Our Mission</h3>
+              <p className="text-gray-600 leading-relaxed">
+                To revolutionize the packaging industry by delivering innovative and sustainable solutions that embody our commitment to both quality and environmental stewardship.
               </p>
             </div>
 
             {/* Vision */}
-            <div className="card shadow-md bg-white p-3 rounded-md">
-              <div className="flex space-x-3 items-center justify-center">
-                <Icon
-                  icon="ph:eye-bold"
-                  className="text-darkGreen"
-                  width="30"
-                />
-                <p className="text_gradient text-center font-bold text-2xl">
-                  Vision
-                </p>
+            <div className="group bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+              <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+                <Icon icon="ph:eye-bold" width="32" />
               </div>
-              <hr />
-              <p className="p-2">
-                Our vision is to be a global leader in eco-conscious packaging,
-                setting the standard for responsible innovation. We envision a
-                world where every product is packaged with the environment in
-                mind, where our solutions contribute to a circular economy, and
-                where our collaborative efforts create lasting positive impact
-                on both businesses and the planet.
+              <h3 className="text-2xl font-bold text-gray-800 mb-4 group-hover:text-brown transition-colors">Our Vision</h3>
+              <p className="text-gray-600 leading-relaxed">
+                To be a global leader in eco-conscious packaging, envisioning a world where every product is packaged with the environment in mind, creating a circular economy.
               </p>
             </div>
 
             {/* Value */}
-
-            <div className="card shadow-md bg-white p-3 rounded-md">
-              <div className="flex space-x-3 items-center justify-center">
-                <Icon
-                  icon="material-symbols:handshake-outline"
-                  className="text-darkGreen"
-                  width="30"
-                />
-                <p className="text_gradient text-center font-bold text-2xl">
-                  Value
-                </p>
+            <div className="group bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+              <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mb-6 text-brown group-hover:bg-brown group-hover:text-white transition-colors duration-300">
+                <Icon icon="material-symbols:handshake-outline" width="32" />
               </div>
-              <hr />
-              <p className="p-2">
-                Agelgil Eco Packaging embodies essential values. Sustainability
-                underpins our eco-friendly solutions and spurs positive impact.
-                Innovation drives design with environmental integrity. Our
-                commitment to quality ensures aesthetic and ethical excellence.
-                Collaborative partnerships align solutions with identities and
-                eco-aspirations. As advocates, we educate for a greener world.
+              <h3 className="text-2xl font-bold text-gray-800 mb-4 group-hover:text-brown transition-colors">Our Values</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Sustainability, Innovation, Quality, and Collaboration. These values underpin everything we do, driving us to create solutions that are ethically excellent.
               </p>
             </div>
           </div>
         </div>
       </section>
-      <Team/>
+      <Team />
     </>
   );
 }

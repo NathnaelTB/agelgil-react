@@ -1,3 +1,4 @@
+import { Icon } from "@iconify/react";
 import afomi from "../assets/afomi.jpg";
 import biruk from '../assets/biruk.jpeg'
 import yeshumnesh from '../assets/yeshum.jpeg'
@@ -10,95 +11,88 @@ import besufekad from '../assets/besu.jpeg'
 const Team = () => {
   return (
     <>
-      <section className="section my-4">
+      <section className="bg-gray-50 py-12">
         <div className="container">
-          <p className="text-center text_section_title py-4">Who are we?</p>
-          <p className="muted">
-            Our dedicated team members bring a wealth of expertise and passion
-            to the table. Together, we&apos;re driven by a shared commitment to
-            sustainable packaging solutions and a vision of a greener future.
-            Get ready to discover the faces that fuel our innovation and guide
-            our mission towards positive change.
-          </p>
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Meet The Team</h2>
+            <div className="h-1.5 w-24 bg-gradient-to-r from-brown to-darkGreen mx-auto mb-8 rounded-full"></div>
+            <p className="text-gray-600 text-xl leading-relaxed">
+              Our dedicated team members bring a wealth of expertise and passion to the table. We're driven by a shared commitment to sustainable packaging and a vision of a greener future.
+            </p>
+          </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 my-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
             {/* Afomia Andualem */}
-            <div className="flex flex-col items-center text-center">
-              <div>
-                <img src={afomi} alt="" className="w-40 h-40 rounded-full" />
+            <div className="bg-white rounded-[2rem] p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-blue-50/50 flex flex-col items-center text-center group relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-36 bg-gradient-to-r from-brown/10 to-transparent opacity-50"></div>
+              <div className="mb-6 relative">
+                <div className="absolute inset-0 bg-brown rounded-full blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500 scale-125"></div>
+                <img src={afomi} alt="Afomia Andualem" className="w-52 h-52 rounded-full object-cover object-top relative z-10 border-[6px] border-white shadow-2xl transform group-hover:scale-105 transition-transform duration-500" />
               </div>
-              <div className="mt-3">
-                <p className="font-semibold">Afomia Andualem</p>
-                <p className="text-brown">CEO & Co founder</p>
-              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-2 relative z-10">Afomia Andualem</h3>
+              <p className="text-brown font-semibold uppercase tracking-wider text-sm mb-4 relative z-10">CEO & Co-Founder</p>
+              <div className="w-12 h-1 bg-gray-100 group-hover:bg-brown rounded-full transition-colors duration-300"></div>
             </div>
+
             {/* Biruk Neecho */}
-
-            <div className="flex flex-col items-center text-center">
-              <div>
-                <img src={biruk} alt="" className="w-40 h-40 rounded-full" />
+            <div className="bg-white rounded-[2rem] p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-blue-50/50 flex flex-col items-center text-center group relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-36 bg-gradient-to-r from-brown/10 to-transparent opacity-50"></div>
+              <div className="mb-6 relative">
+                <div className="absolute inset-0 bg-brown rounded-full blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500 scale-125"></div>
+                <img src={biruk} alt="Biruk Neecho" className="w-52 h-52 rounded-full object-cover object-top relative z-10 border-[6px] border-white shadow-2xl transform group-hover:scale-105 transition-transform duration-500" />
               </div>
-              <div className="mt-3">
-                <p className="font-semibold">Biruk Neecho</p>
-                <p className="text-brown">Product Development</p>
-              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-2 relative z-10">Biruk Neecho</h3>
+              <p className="text-brown font-semibold uppercase tracking-wider text-sm mb-4 relative z-10">Product Development</p>
+              <div className="w-12 h-1 bg-gray-100 group-hover:bg-brown rounded-full transition-colors duration-300"></div>
             </div>
 
-            {/* Yeshumnesh */}
-            <div className="flex flex-col items-center text-center">
-              <div>
-                <img
-                  src={yeshumnesh}
-                  alt=""
-                  className="w-40 h-40 rounded-full"
-                />
+            {/* Besufekad Amezene */}
+            <div className="bg-white rounded-[2rem] p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-blue-50/50 flex flex-col items-center text-center group relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-36 bg-gradient-to-r from-brown/10 to-transparent opacity-50"></div>
+              <div className="mb-6 relative">
+                <div className="absolute inset-0 bg-brown rounded-full blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500 scale-125"></div>
+                <img src={besufekad} alt="Besufekad Amezene" className="w-52 h-52 rounded-full object-cover object-top relative z-10 border-[6px] border-white shadow-2xl transform group-hover:scale-105 transition-transform duration-500" />
               </div>
-              <div className="mt-3">
-                <p className="font-semibold">Yeshumnesh Adane</p>
-                <p className="text-brown">customer service</p>
-              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-2 relative z-10">Besufekad Amezene</h3>
+              <p className="text-brown font-semibold uppercase tracking-wider text-sm mb-4 relative z-10">COO</p>
+              <div className="w-12 h-1 bg-gray-100 group-hover:bg-brown rounded-full transition-colors duration-300"></div>
             </div>
-            {/* Yohannes */}
-            <div className="flex flex-col items-center text-center">
-              <div>
-                <img src={jo} alt="" className="w-40 h-40 rounded-full" />
+
+            {/* Yohannes Ababu */}
+            <div className="bg-white rounded-[2rem] p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-blue-50/50 flex flex-col items-center text-center group relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-36 bg-gradient-to-r from-brown/10 to-transparent opacity-50"></div>
+              <div className="mb-6 relative">
+                <div className="absolute inset-0 bg-brown rounded-full blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500 scale-125"></div>
+                <img src={jo} alt="Yohannes Ababu" className="w-52 h-52 rounded-full object-cover object-top relative z-10 border-[6px] border-white shadow-2xl transform group-hover:scale-105 transition-transform duration-500" />
               </div>
-              <div className="mt-3">
-                <p className="font-semibold">Yohannes Ababu</p>
-                <p className="text-brown">
-                  Finance & Investment Officer
-                </p>
-              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-2 relative z-10">Yohannes Ababu</h3>
+              <p className="text-brown font-semibold uppercase tracking-wider text-sm mb-4 relative z-10">Finance & Investment</p>
+              <div className="w-12 h-1 bg-gray-100 group-hover:bg-brown rounded-full transition-colors duration-300"></div>
             </div>
+
             {/* Yirga Dessale */}
-            <div className="flex flex-col items-center text-center">
-              <div>
-                <img src={yirga} alt="" className="w-40 h-40 rounded-full" />
+            <div className="bg-white rounded-[2rem] p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-blue-50/50 flex flex-col items-center text-center group relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-36 bg-gradient-to-r from-brown/10 to-transparent opacity-50"></div>
+              <div className="mb-6 relative">
+                <div className="absolute inset-0 bg-brown rounded-full blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500 scale-125"></div>
+                <img src={yirga} alt="Yirga Dessale" className="w-52 h-52 rounded-full object-cover object-top relative z-10 border-[6px] border-white shadow-2xl transform group-hover:scale-105 transition-transform duration-500" />
               </div>
-              <div className="mt-3">
-                <p className="font-semibold">Yirga Dessale</p>
-                <p className="text-brown">
-                 Human Resource
-                </p>
-              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-2 relative z-10">Yirga Dessale</h3>
+              <p className="text-brown font-semibold uppercase tracking-wider text-sm mb-4 relative z-10">Human Resources</p>
+              <div className="w-12 h-1 bg-gray-100 group-hover:bg-brown rounded-full transition-colors duration-300"></div>
             </div>
-            {/*  */}
-            <div className="flex flex-col items-center text-center">
-              <div>
-                <img
-                  src={besufekad}
-                  alt=""
-                  className="w-40 h-40 rounded-full"
-                />
+
+            {/* Yeshumnesh Adane */}
+            <div className="bg-white rounded-[2rem] p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-blue-50/50 flex flex-col items-center text-center group relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-36 bg-gradient-to-r from-brown/10 to-transparent opacity-50"></div>
+              <div className="mb-6 relative">
+                <div className="absolute inset-0 bg-brown rounded-full blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500 scale-125"></div>
+                <img src={yeshumnesh} alt="Yeshumnesh Adane" className="w-52 h-52 rounded-full object-cover object-top relative z-10 border-[6px] border-white shadow-2xl transform group-hover:scale-105 transition-transform duration-500" />
               </div>
-              <div className="mt-3">
-                <p className="font-semibold text-center">Besufekad Amezene</p>
-                <p className="text-brown">
-               COO
-                </p>
-              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-2 relative z-10">Yeshumnesh Adane</h3>
+              <p className="text-brown font-semibold uppercase tracking-wider text-sm mb-4 relative z-10">Customer Service</p>
+              <div className="w-12 h-1 bg-gray-100 group-hover:bg-brown rounded-full transition-colors duration-300"></div>
             </div>
-            {/*  */}
           </div>
         </div>
       </section>
