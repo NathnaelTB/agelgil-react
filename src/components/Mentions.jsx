@@ -59,8 +59,11 @@ const Mentions = () => {
 
 
     return (
-        <div className='container py-10'>
-            <p className="custom_font custom_title py-4">Top News</p>
+        <div className='container'>
+            <div className="flex items-center space-x-4 mb-8">
+                <h2 className="text-3xl font-bold text-gray-800">Featured Stories</h2>
+                <div className="h-0.5 bg-gray-200 flex-grow rounded-full"></div>
+            </div>
 
             <Swiper
                 navigation
@@ -69,37 +72,43 @@ const Mentions = () => {
                 centeredSlides={false}
                 pagination={{
                     clickable: true,
-                    type: 'fraction'
+                    type: 'bullets',
                 }}
                 modules={[Pagination, Navigation]}
-                className="mySwiper"
+                className="mySwiper !pb-12"
             >
                 {news.map((item, index) => {
-                    {
-                        if (index < 6) {
-                            return <SwiperSlide>
+                    if (index < 6) {
+                        return (
+                            <SwiperSlide key={item.id}>
                                 <Link to={`/news/${item.id}`}>
-                                    <div className="h-[40vh] grid gap-x-6  overflow-hidden  sm:grid-cols-2 shadow-lg">
-                                        <div className=" ">
-                                            <img src={item.image} alt="" className="object-cover" />
+                                    <div className="grid md:grid-cols-2 gap-0 bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden group hover:shadow-2xl transition-all duration-300">
+                                        <div className="h-64 md:h-96 relative overflow-hidden">
+                                            <img
+                                                src={item.image}
+                                                alt={item.title}
+                                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent md:bg-none"></div>
                                         </div>
-                                        <div className=''>
-                                            <p className="text-lg ">{item.title}</p>
-                                            <div className='py-7'>
-                                                <p>{item.body.substring(0, 200)}</p>
-                                                <div className="flex space-x-3 items-center">
-                                                    <Icon icon="fluent:news-16-filled text-brown" />
-                                                    <p className="text-brown">read more</p>
-                                                </div>
+                                        <div className='p-8 md:p-12 flex flex-col justify-center'>
+                                            <div className="mb-4">
+                                                <span className="bg-brown/10 text-brown px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">Featured</span>
+                                            </div>
+                                            <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4 group-hover:text-brown transition-colors leading-tight">{item.title}</h3>
+                                            <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-8 line-clamp-3">{item.body}</p>
+
+                                            <div className="flex items-center text-brown font-bold group-hover:text-darkGreen transition-colors">
+                                                <span>Read Full Story</span>
+                                                <Icon icon="fluent:arrow-right-24-filled" className="ml-2 text-xl transform group-hover:translate-x-2 transition-transform" />
                                             </div>
                                         </div>
                                     </div>
                                 </Link>
-
-
                             </SwiperSlide>
-                        }
+                        );
                     }
+                    return null;
                 })}
             </Swiper>
         </div>
