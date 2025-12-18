@@ -66,7 +66,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="container pt-8 border-t border-gray-800 text-left text-sm text-gray-500">
+      <div className="container pt-8 border-t border-gray-800 text-center text-sm text-gray-500">
         <p>© {new Date().getFullYear()} Agelgil Eco Packaging. All rights reserved.</p>
       </div>
     </footer>
