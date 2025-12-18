@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
-
 import hero from '../../public/afomia_bg.jpg'
 
 const Hero = () => {
@@ -50,7 +50,9 @@ const Hero = () => {
         <h1 ref={titleRef} className="text-white text-5xl md:text-8xl thin tracking-wide drop-shadow-md">Agelgil Eco Packaging</h1>
         <p ref={subtitleRef} className='text-white text-xl md:text-3xl thin py-6 tracking-wider opacity-90'>Packaging with Consideration</p>
         <div ref={lineRef} className="line bg-white w-1 h-36"></div>
-        <button ref={btnRef} className='bg-brown text-white px-8 py-3 rounded-full font-medium hover:bg-darkGreen transition-all duration-300 shadow-lg hover:shadow-xl mt-6 transform hover:-translate-y-1'>Contact Us</button>
+        <Link to="/contact">
+          <button ref={btnRef} className='bg-brown text-white px-8 py-3 rounded-full font-medium hover:bg-darkGreen transition-all duration-300 shadow-lg hover:shadow-xl mt-6 transform hover:-translate-y-1'>Contact Us</button>
+        </Link>
       </div>
     </section>
   );
