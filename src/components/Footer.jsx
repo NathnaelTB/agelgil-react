@@ -30,9 +30,11 @@ const Footer = () => {
           <h3 className="text-white font-semibold mb-6 uppercase tracking-wider text-sm">Quick Links</h3>
           <div className="flex flex-col space-y-3 text-sm w-full">
             <Link className="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block" to="/">Home</Link>
+            <Link className="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block" to="/news">News</Link>
             <Link className="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block" to="/product">Our Products</Link>
             <Link className="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block" to="/impact">Our Impact</Link>
             <Link className="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block" to="/about">About Us</Link>
+            <Link className="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block" to="/contact">Contact Us</Link>
           </div>
         </div>
 
