@@ -94,11 +94,11 @@ const Contact = (props) => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-600 mb-2">Your Name</label>
-                  <input type="text" name="Name" id="name" placeholder="John Doe" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-brown focus:ring-1 focus:ring-brown transition-colors" required />
+                  <input type="text" name="Name" id="name" placeholder="Enter your name" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-brown focus:ring-1 focus:ring-brown transition-colors" required />
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-600 mb-2">Email Address</label>
-                  <input type="email" name="Email" id="email" placeholder="john@example.com" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-brown focus:ring-1 focus:ring-brown transition-colors" required />
+                  <input type="email" name="Email" id="email" placeholder="Enter your email" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-brown focus:ring-1 focus:ring-brown transition-colors" required />
                 </div>
               </div>
 
@@ -120,13 +120,19 @@ const Contact = (props) => {
         </div>
 
         {/* Map Section */}
-        <div className="mt-20 rounded-3xl overflow-hidden shadow-lg border border-gray-200 h-[400px]">
-          <div
-            className="w-full h-full"
-            dangerouslySetInnerHTML={{
-              __html: props.mapFrame || '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3936.793744652486!2d37.38283331410521!3d11.597155649984646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1644d2105156686d%3A0x6d85942438171164!2sBahir%20Dar!5e0!3m2!1sen!2set!4v1634567890123!5m2!1sen!2set" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>',
-            }}
-          />
+        <div className="mt-20">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">Find Us Here</h2>
+            <p className="text-gray-600 text-lg">Visit our office at Lemlemitu Bahir Dar Commercial Center</p>
+          </div>
+          <div className="rounded-3xl overflow-hidden shadow-lg border border-gray-200 h-[400px]">
+            <div
+              className="w-full h-full"
+              dangerouslySetInnerHTML={{
+                __html: props.mapFrame || '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3936.793744652486!2d37.38283331410521!3d11.597155649984646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1644d2105156686d%3A0x6d85942438171164!2sBahir%20Dar!5e0!3m2!1sen!2set!4v1634567890123!5m2!1sen!2set" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>',
+              }}
+            />
+          </div>
         </div>
       </div>
     </div>
