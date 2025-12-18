@@ -98,23 +98,23 @@ const Nav = () => {
       {showMenu && (
         <div className=" block md:hidden font-medium text-lg container">
           <div>
-            <Link className={isActive("/news") ? activeLinkClass : ""} to="/news">
+            <Link className={isActive("/news") ? activeLinkClass : ""} to="/news" onClick={() => setShowMenu(false)}>
               News
             </Link>
           </div>
           <div>
-            <Link className={isActive("/product") ? activeLinkClass : ""} to="/product">
+            <Link className={isActive("/product") ? activeLinkClass : ""} to="/product" onClick={() => setShowMenu(false)}>
               Our products
             </Link>
           </div>
           <div>
-            <Link className={isActive("/impact") ? activeLinkClass : ""} to="/impact">Our Impact</Link>
+            <Link className={isActive("/impact") ? activeLinkClass : ""} to="/impact" onClick={() => setShowMenu(false)}>Our Impact</Link>
           </div>
           <div>
-            <Link className={isActive("/about") ? activeLinkClass : ""} to="/about">About Us</Link>
+            <Link className={isActive("/about") ? activeLinkClass : ""} to="/about" onClick={() => setShowMenu(false)}>About Us</Link>
           </div>
           <div>
-            <Link className={isActive("/contact") ? activeLinkClass : ""} to="/contact">Contact Us</Link>
+            <Link className={isActive("/contact") ? activeLinkClass : ""} to="/contact" onClick={() => setShowMenu(false)}>Contact Us</Link>
           </div>
         </div>
       )}
