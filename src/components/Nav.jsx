@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Link, redirect } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/logo.jpg";
 import { Icon } from "@iconify/react";
 import gsap from "gsap";
@@ -9,6 +9,13 @@ const Nav = () => {
   const [scrolling, setScrolling] = useState(false);
   const navRef = useRef(null);
   const linkRef = useRef(null);
+  const location = useLocation();
+
+  // Helper function to check if a link is active
+  const isActive = (path) => location.pathname === path;
+
+  // Style for active link
+  const activeLinkClass = "border-b-2 border-brown pb-1";
 
   useEffect(() => {
     const nav = navRef.current;
@@ -45,11 +52,10 @@ const Nav = () => {
   return (
     <nav
       id="nav"
-      className={`z-30 nav fixed md:mb-3 top-0 w-screen text-white ${
-        scrolling
-          ? "backdrop-filter backdrop-blur-lg bg-black/40"
-          : "backdrop-filter backdrop-blur-lg bg-black/40"
-      }`}
+      className={`z-30 nav fixed md:mb-3 top-0 w-screen text-white ${scrolling
+        ? "backdrop-filter backdrop-blur-lg bg-black/40"
+        : "backdrop-filter backdrop-blur-lg bg-black/40"
+        }`}
     >
       <div
         ref={navRef}
@@ -67,11 +73,11 @@ const Nav = () => {
           ref={linkRef}
           className="space-x-5  max-lg:hidden font-medium text-lg"
         >
-          <Link to="/news">News</Link>
-          <Link to="/product">Product</Link>
-          <Link to="/impact">Impact</Link>
-          <Link to="/about">About Us</Link>
-          <Link to="/contact">Contact Us</Link>
+          <Link to="/news" className={isActive("/news") ? activeLinkClass : ""}>News</Link>
+          <Link to="/product" className={isActive("/product") ? activeLinkClass : ""}>Product</Link>
+          <Link to="/impact" className={isActive("/impact") ? activeLinkClass : ""}>Impact</Link>
+          <Link to="/about" className={isActive("/about") ? activeLinkClass : ""}>About Us</Link>
+          <Link to="/contact" className={isActive("/contact") ? activeLinkClass : ""}>Contact Us</Link>
         </div>
 
         {/* Working with Mobile version of nav  */}
@@ -92,18 +98,23 @@ const Nav = () => {
       {showMenu && (
         <div className=" block md:hidden font-medium text-lg container">
           <div>
-            <Link className="hover:border-b-brown" to="/product">
+            <Link className={isActive("/news") ? activeLinkClass : ""} to="/news">
+              News
+            </Link>
+          </div>
+          <div>
+            <Link className={isActive("/product") ? activeLinkClass : ""} to="/product">
               Our products
             </Link>
           </div>
           <div>
-            <Link to="/impact">Our Impact</Link>
+            <Link className={isActive("/impact") ? activeLinkClass : ""} to="/impact">Our Impact</Link>
           </div>
           <div>
-            <Link to="/about">About Us</Link>
+            <Link className={isActive("/about") ? activeLinkClass : ""} to="/about">About Us</Link>
           </div>
           <div>
-            <Link to="/contact">Contact Us</Link>
+            <Link className={isActive("/contact") ? activeLinkClass : ""} to="/contact">Contact Us</Link>
           </div>
         </div>
       )}
