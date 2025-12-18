@@ -6,6 +6,8 @@ import Contact from './pages/Contact'
 import About from './pages/About'
 import Impact from './pages/Impact'
 import Product from './pages/Product'
+import BoxesCollection from './pages/BoxesCollection'
+import CardsCollection from './pages/CardsCollection'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
 import NotFound from './pages/NotFound'
@@ -45,6 +47,8 @@ const App = () => {
             <Route path="/product" element={<Product />}>
               <Route path='/product/:id' element={ProductCard}></Route>
             </Route>
+            <Route path="/product/boxes" element={<BoxesCollection />}></Route>
+            <Route path="/product/cards" element={<CardsCollection />}></Route>
             <Route path='/news' element={<NewsPage />}></Route>
             <Route path="/news/:id" element={<NewsDetail />}></Route>
             <Route path="/*" element={<NotFound />}></Route>

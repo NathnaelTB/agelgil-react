@@ -1,3 +1,4 @@
+import { Icon } from "@iconify/react";
 import ProductCard from "../components/ProductCard";
 import teabox from "../assets/products/teabox.jpg";
 import gift from "../assets/products/gift.jpeg";
@@ -6,8 +7,70 @@ import takeaway from "../assets/products/takeaway.jpg";
 import candle from "../assets/products/ad.jpg";
 import coffee from "../assets/products/coffee.jpg";
 import general from "../assets/products/general_products.jpeg";
+import coffeePkg from "../assets/products/img_1029.jpg";
+import shopping from "../assets/products/img_1056.jpg";
+import notebook from "../assets/products/img_1157.jpg";
 
 const Product = () => {
+  // Collections - main categories
+  const collections = [
+    {
+      id: 1,
+      title: "Boxes",
+      description: "Custom eco-friendly boxes for all your packaging needs - gift boxes, product boxes, and more.",
+      icon: "mdi:package-variant-closed",
+      link: "/product/boxes",
+    },
+    {
+      id: 2,
+      title: "Cards & General Stationery",
+      description: "Business cards, greeting cards, and stationery products crafted with sustainable practices.",
+      icon: "mdi:cards",
+      link: "/product/cards",
+    },
+  ];
+
+
+  // Other products - with images
+  const otherProducts = [
+    {
+      id: 1,
+      title: "Coffee Packaging",
+      description: "Sustainable coffee bags and pouches designed to keep your coffee fresh while protecting the environment.",
+      image: coffeePkg,
+    },
+    {
+      id: 2,
+      title: "Shopping Bags",
+      description: "Durable and stylish eco-friendly shopping bags that make a statement for your brand.",
+      image: shopping,
+    },
+    {
+      id: 3,
+      title: "Custom Notebooks & Books",
+      description: "High-quality printed materials including notebooks, exercise books, magazines, and books.",
+      image: notebook,
+    },
+    {
+      id: 4,
+      title: "Garment Packaging",
+      description: "Eco-friendly packaging solutions for the fashion industry including tags, boxes, and bags.",
+      image: general,
+    },
+    {
+      id: 8,
+      title: "Takeaway",
+      description: "Sustainable takeaway packaging solutions for restaurants and food businesses.",
+      image: takeaway,
+    },
+    {
+      id: 10,
+      title: "Coffee Packages",
+      description: "Premium coffee packaging that preserves freshness while being environmentally responsible.",
+      image: coffee,
+    },
+  ];
+
   return (
     <>
       <section className="min-h-screen bg-gray-50 pb-16">
@@ -24,16 +87,59 @@ const Product = () => {
 
         <div className="container">
           <div className="mb-12 text-center max-w-2xl mx-auto">
-            <p className="text-gray-600 leading-relaxed">Discover our range of sustainable packaging solutions, carefully crafted to reduce environmental impact without complying on quality.</p>
+            <p className="text-gray-600 leading-relaxed">Discover our range of sustainable packaging solutions, carefully crafted to reduce environmental impact without compromising on quality.</p>
           </div>
 
-          <section className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 place-content-center">
-            <ProductCard image={teabox} title="Tea Box"></ProductCard>
-            <ProductCard image={gift} title="Watch & Gift Box"></ProductCard>
-            <ProductCard image={electronics} title="Electronics"></ProductCard>
-            <ProductCard image={takeaway} title="Takeaway"></ProductCard>
-            <ProductCard image={candle} title="Candle Packages"></ProductCard>
-            <ProductCard image={coffee} title="Coffee Packages"></ProductCard>
+          {/* Collections */}
+          <div className="mb-8">
+            <h2 className="text-3xl font-bold text-gray-800 text-center mb-10">Collections</h2>
+          </div>
+
+          <section className="grid sm:grid-cols-2 gap-8 mb-20 max-w-4xl mx-auto">
+            {collections.map((category) => (
+              <div
+                key={category.id}
+                className="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
+              >
+                <div className="h-32 bg-gradient-to-br from-brown to-brown/80 flex items-center justify-center">
+                  <Icon
+                    icon={category.icon}
+                    className="text-white text-6xl group-hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-brown transition-colors">
+                    {category.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                    {category.description}
+                  </p>
+                  <a
+                    href={category.link}
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-brown text-white font-medium rounded-lg hover:bg-brown/90 transition-colors duration-300"
+                  >
+                    <Icon icon="mdi:arrow-right" width="18" />
+                    View Collection
+                  </a>
+                </div>
+              </div>
+            ))}
+          </section>
+
+          {/* Other Products */}
+          <div className="mb-8">
+            <h2 className="text-3xl font-bold text-gray-800 text-center mb-10">Other Products</h2>
+          </div>
+
+          <section className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {otherProducts.map((product) => (
+              <ProductCard
+                key={product.id}
+                image={product.image}
+                title={product.title}
+                description={product.description}
+              />
+            ))}
           </section>
         </div>
       </section>
