@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
+import OrderModal from "../components/OrderModal";
 import general from "../assets/products/general_products.jpeg";
 import n1 from "../assets/p1.jpeg";
 import n2 from "../assets/p2.jpeg";
@@ -12,37 +14,51 @@ import n11 from "../assets/p11.jpg";
 import n13 from "../assets/p13.jpg";
 
 const CardsCollection = () => {
+    const [isOrderModalOpen, setIsOrderModalOpen] = useState(false);
+    const [selectedProduct, setSelectedProduct] = useState("");
+
+    const handleOrderClick = (productTitle) => {
+        setSelectedProduct(productTitle);
+        setIsOrderModalOpen(true);
+    };
+
     // Cards & Stationery collection products
     const cardProducts = [
         {
             id: 1,
-            title: "Appointment Card",
-            description: "Professional appointment cards for businesses and service providers.",
-            image: n1,
+            title: "Business Cards",
+            description: "Premium eco-friendly business cards that leave a lasting impression of sustainability.",
+            image: n4,
         },
         {
             id: 2,
-            title: "Gift Card",
-            description: "Beautiful gift cards for all occasions and celebrations.",
-            image: n2,
+            title: "Custom Books",
+            description: "High-quality printed books with sustainable paper and binding options.",
+            image: n13,
         },
         {
             id: 3,
-            title: "Business Card",
-            description: "Premium business cards that make a lasting impression.",
+            title: "Magazines & Journals",
+            description: "Professional magazine and journal printing with a focus on eco-conscious materials.",
             image: n11,
         },
         {
             id: 4,
-            title: "Brochures",
-            description: "High-quality brochures for marketing and informational purposes.",
-            image: n13,
+            title: "Exercise Books",
+            description: "Sustainable exercise books for schools and businesses, crafted with care.",
+            image: n1,
         },
         {
             id: 5,
-            title: "Flyers",
-            description: "Eye-catching flyers for promotions and events.",
-            image: n4,
+            title: "Notebooks",
+            description: "Versatile and stylish notebooks for all your creative and professional needs.",
+            image: n2,
+        },
+        {
+            id: 6,
+            title: "Greeting Cards",
+            description: "Beautifully designed greeting cards for every occasion, printed sustainably.",
+            image: n6,
         },
     ];
 
@@ -169,6 +185,7 @@ const CardsCollection = () => {
                                 image={product.image}
                                 title={product.title}
                                 description={product.description}
+                                onOrder={() => handleOrderClick(product.title)}
                             />
                         ))}
                     </section>
@@ -266,6 +283,12 @@ const CardsCollection = () => {
                     </div>
                 </div>
             </section>
+
+            <OrderModal
+                isOpen={isOrderModalOpen}
+                onClose={() => setIsOrderModalOpen(false)}
+                productTitle={selectedProduct}
+            />
         </>
     );
 };

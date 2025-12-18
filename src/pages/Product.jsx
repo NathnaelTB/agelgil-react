@@ -1,17 +1,30 @@
+import { useState } from "react";
 import { Icon } from "@iconify/react";
 import ProductCard from "../components/ProductCard";
-import teabox from "../assets/products/teabox.jpg";
-import gift from "../assets/products/gift.jpeg";
-import electronics from "../assets/products/electronics.jpg";
+import OrderModal from "../components/OrderModal";
+// import teabox from "../assets/products/teabox.jpg";
+// import gift from "../assets/products/gift.jpeg";
+// import electronics from "../assets/products/electronics.jpg";
 import takeaway from "../assets/products/takeaway.jpg";
-import candle from "../assets/products/ad.jpg";
-import coffee from "../assets/products/coffee.jpg";
+// import candle from "../assets/products/ad.jpg";
+// import coffee from "../assets/products/coffee.jpg";
+import coffeeNew from "../assets/products/coffee-new.jpg";
 import general from "../assets/products/general_products.jpeg";
-import coffeePkg from "../assets/products/img_1029.jpg";
-import shopping from "../assets/products/img_1056.jpg";
-import notebook from "../assets/products/img_1157.jpg";
+import shoppingNew from "../assets/products/shopping-bag.png";
+// import shopping from "../assets/products/img_1056.jpg";
+// import notebook from "../assets/products/img_1157.jpg";
+import garment from "../assets/products/garment.png";
+import books from "../assets/products/books.png";
 
 const Product = () => {
+  const [isOrderModalOpen, setIsOrderModalOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState("");
+
+  const handleOrderClick = (productTitle) => {
+    setSelectedProduct(productTitle);
+    setIsOrderModalOpen(true);
+  };
+
   // Collections - main categories
   const collections = [
     {
@@ -37,37 +50,31 @@ const Product = () => {
       id: 1,
       title: "Coffee Packaging",
       description: "Sustainable coffee bags and pouches designed to keep your coffee fresh while protecting the environment.",
-      image: coffeePkg,
+      image: coffeeNew,
     },
     {
       id: 2,
       title: "Shopping Bags",
       description: "Durable and stylish eco-friendly shopping bags that make a statement for your brand.",
-      image: shopping,
+      image: shoppingNew,
     },
     {
       id: 3,
       title: "Custom Notebooks & Books",
       description: "High-quality printed materials including notebooks, exercise books, magazines, and books.",
-      image: notebook,
+      image: books,
     },
     {
       id: 4,
       title: "Garment Packaging",
       description: "Eco-friendly packaging solutions for the fashion industry including tags, boxes, and bags.",
-      image: general,
+      image: garment,
     },
     {
       id: 8,
       title: "Takeaway",
       description: "Sustainable takeaway packaging solutions for restaurants and food businesses.",
       image: takeaway,
-    },
-    {
-      id: 10,
-      title: "Coffee Packages",
-      description: "Premium coffee packaging that preserves freshness while being environmentally responsible.",
-      image: coffee,
     },
   ];
 
@@ -138,11 +145,18 @@ const Product = () => {
                 image={product.image}
                 title={product.title}
                 description={product.description}
+                onOrder={() => handleOrderClick(product.title)}
               />
             ))}
           </section>
         </div>
       </section>
+
+      <OrderModal
+        isOpen={isOrderModalOpen}
+        onClose={() => setIsOrderModalOpen(false)}
+        productTitle={selectedProduct}
+      />
     </>
   );
 };

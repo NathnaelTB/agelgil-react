@@ -16,6 +16,8 @@ import NewsPage from './pages/NewsPage'
 import ProductCard from './components/ProductCard'
 import ScrollToTop from './components/ScrollToTop'
 
+import { Toaster } from 'react-hot-toast';
+
 const App = () => {
 
   const mapFrame = `<iframe
@@ -31,6 +33,7 @@ const App = () => {
   return (
     <>
       <main className="relative flex flex-col">
+        <Toaster position="top-center" reverseOrder={false} />
         <ScrollToTop />
         <Nav />
         {/* Navbar  */}

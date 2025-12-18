@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
+import OrderModal from "../components/OrderModal";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -53,6 +55,14 @@ const PrevArrow = (props) => {
 };
 
 const BoxesCollection = () => {
+    const [isOrderModalOpen, setIsOrderModalOpen] = useState(false);
+    const [selectedProduct, setSelectedProduct] = useState("");
+
+    const handleOrderClick = (productTitle) => {
+        setSelectedProduct(productTitle);
+        setIsOrderModalOpen(true);
+    };
+
     // Boxes collection products
     const boxProducts = [
         {
@@ -280,80 +290,80 @@ const BoxesCollection = () => {
                                         image={product.image}
                                         title={product.title}
                                         description={product.description}
+                                        onOrder={() => handleOrderClick(product.title)}
                                     />
                                 </div>
                             ))}
                         </Slider>
                     </div>
 
-                    {/* Grid Section - For more space utilization */}
-                    <div className="bg-white rounded-3xl p-12 shadow-sm border border-gray-100">
-                        <div className="grid md:grid-cols-2 gap-16 items-center">
+                    <div className="bg-brown/5 rounded-3xl p-12 mb-24">
+                        <div className="grid md:grid-cols-2 gap-12 items-center">
                             <div>
-                                <h3 className="text-3xl font-bold text-gray-800 mb-6">Unmatched Versatility</h3>
-                                <p className="text-gray-600 text-lg mb-8 leading-relaxed">
-                                    Whether you're packaging delicate jewelry or robust electronics, our sustainable
-                                    solutions offer the perfect balance of protection and aesthetics. Each box
-                                    tells a story of quality and environmental responsibility.
+                                <h2 className="text-4xl font-bold text-gray-800 mb-6 leading-tight">
+                                    Unmatched Versatility for <span className="text-brown italic underline decoration-brown/30">Every Industry</span>
+                                </h2>
+                                <p className="text-gray-600 text-lg leading-relaxed mb-8">
+                                    Our collection represents the pinnacle of sustainable design, proving that eco-friendly packaging can be both functionally robust and visually stunning.
                                 </p>
-                                <ul className="space-y-4">
+                                <div className="space-y-4">
                                     {[
-                                        "Available in various sizes and shapes",
-                                        "Reinforced structural integrity",
-                                        "Premium texture and finishing options",
-                                        "Eco-friendly inks and dyes"
-                                    ].map((item, idx) => (
-                                        <li key={idx} className="flex items-center gap-3 text-gray-700">
-                                            <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center">
-                                                <Icon icon="mdi:check" className="text-green-600 text-sm" />
+                                        "Custom dimensions tailored to your product",
+                                        "Premium finishes with sustainable inks",
+                                        "Rapid turnaround and scalable production",
+                                        "100% biodegradable and recyclable materials"
+                                    ].map((item, i) => (
+                                        <div key={i} className="flex items-center gap-3">
+                                            <div className="w-6 h-6 rounded-full bg-brown/10 flex items-center justify-center text-brown">
+                                                <Icon icon="mdi:check-bold" width="14" />
                                             </div>
-                                            {item}
-                                        </li>
+                                            <span className="text-gray-700 font-medium">{item}</span>
+                                        </div>
                                     ))}
-                                </ul>
+                                </div>
                             </div>
                             <div className="grid grid-cols-2 gap-4">
-                                <img src={p11} className="rounded-2xl h-48 w-full object-cover shadow-md" alt="Packaging" />
-                                <img src={p13} className="rounded-2xl h-48 w-full object-cover shadow-md mt-8" alt="Packaging" />
-                                <img src={p6} className="rounded-2xl h-48 w-full object-cover shadow-md -mt-8" alt="Packaging" />
-                                <img src={p3} className="rounded-2xl h-48 w-full object-cover shadow-md" alt="Packaging" />
+                                <img src={p6} alt="Versatile Boxes" className="w-full h-64 object-cover rounded-2xl shadow-lg" />
+                                <img src={p11} alt="Sustainable Design" className="w-full h-48 object-cover rounded-2xl shadow-lg mt-8" />
+                                <img src={p13} alt="Eco Packaging" className="w-full h-48 object-cover rounded-2xl shadow-lg -mt-8" />
+                                <img src={p4} alt="Premium Quality" className="w-full h-64 object-cover rounded-2xl shadow-lg" />
                             </div>
                         </div>
                     </div>
-                </div>
 
-                {/* CTA Section */}
-                <div className="bg-gradient-to-r from-brown to-brown/80 py-20 mt-12">
-                    <div className="container text-center">
-                        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                            Tailored Packaging Solutions
-                        </h2>
-                        <p className="text-white/90 mb-10 max-w-2xl mx-auto text-xl leading-relaxed">
-                            Need something completely unique? Our design team is ready to collaborate
-                            with you to create the perfect box for your brand's specific needs.
-                        </p>
-                        <div className="flex flex-wrap gap-4 justify-center">
-                            <Link
-                                to="/contact"
-                                className="inline-flex items-center gap-3 px-10 py-4 bg-white text-brown font-bold rounded-xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-xl"
-                            >
-                                <Icon icon="mdi:email" width="24" />
-                                Get a Custom Quote
-                            </Link>
-                            <Link
-                                to="/product"
-                                className="inline-flex items-center gap-3 px-10 py-4 bg-transparent border-2 border-white text-white font-bold rounded-xl hover:bg-white/10 transition-all duration-300 shadow-lg"
-                            >
-                                <Icon icon="mdi:arrow-left" width="24" />
-                                Back to Collections
-                            </Link>
+                    <div className="bg-gray-800 rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-brown/10 rounded-full -mr-32 -mt-32 blur-3xl"></div>
+                        <div className="relative z-10">
+                            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Need a Custom Solution?</h2>
+                            <p className="text-gray-400 text-xl mb-10 max-w-2xl mx-auto">
+                                Our design team is ready to help you create the perfect sustainable packaging for your unique brand requirements.
+                            </p>
+                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                                <Link
+                                    to="/contact"
+                                    className="px-10 py-4 bg-brown text-white font-bold rounded-xl hover:bg-brown/90 transition-all duration-300 shadow-xl"
+                                >
+                                    Start a Project
+                                </Link>
+                                <a
+                                    href="https://api.whatsapp.com/message/UGIQ5QDVEFG5A1"
+                                    className="px-10 py-4 bg-white/10 text-white font-bold rounded-xl hover:bg-white/20 transition-all duration-300 backdrop-blur-sm border border-white/10"
+                                >
+                                    Quick Inquiry
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
+
+            <OrderModal
+                isOpen={isOrderModalOpen}
+                onClose={() => setIsOrderModalOpen(false)}
+                productTitle={selectedProduct}
+            />
         </>
     );
 };
 
 export default BoxesCollection;
-

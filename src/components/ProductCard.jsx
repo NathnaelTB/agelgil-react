@@ -1,7 +1,7 @@
 import { Icon } from "@iconify/react";
 
 // eslint-disable-next-line react/prop-types
-const ProductCard = ({ image, title, description }) => {
+const ProductCard = ({ image, title, description, onOrder }) => {
   return (
     <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col h-full transform hover:-translate-y-2">
       <div className="relative overflow-hidden h-48">
@@ -24,13 +24,13 @@ const ProductCard = ({ image, title, description }) => {
         )}
 
         <div className="mt-auto">
-          <a
-            href="/contact"
+          <button
+            onClick={onOrder}
             className="inline-flex items-center gap-2 px-4 py-2 bg-brown text-white font-medium rounded-lg hover:bg-brown/90 transition-colors duration-300"
           >
             <Icon icon="mdi:cart" width="18" />
             Order
-          </a>
+          </button>
         </div>
       </div>
     </div>
