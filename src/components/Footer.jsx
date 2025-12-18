@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
 
         {/* Branding Section */}
-        <div className="flex flex-col items-center md:items-start text-center md:text-left mx-auto w-full md:w-auto">
+        <div className="flex flex-col items-start text-left w-full md:w-auto">
           <h2 className="text-2xl font-bold text-white mb-4 custom_font">Agelgil</h2>
           <p className="text-sm leading-relaxed mb-6 max-w-xs">
             Pioneering sustainable packaging solutions in Ethiopia. We turn agricultural waste into eco-friendly value.
@@ -26,7 +26,7 @@ const Footer = () => {
         </div>
 
         {/* Quick Links */}
-        <div className="flex flex-col items-center md:items-start text-center md:text-left mx-auto w-full md:w-auto">
+        <div className="flex flex-col items-start text-left w-full md:w-auto">
           <h3 className="text-white font-semibold mb-6 uppercase tracking-wider text-sm">Quick Links</h3>
           <div className="flex flex-col space-y-3 text-sm w-full">
             <Link className="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block" to="/">Home</Link>
@@ -39,26 +39,26 @@ const Footer = () => {
         </div>
 
         {/* Contact Info */}
-        <div className="flex flex-col items-center md:items-start text-center md:text-left mx-auto w-full md:w-auto">
+        <div className="flex flex-col items-start text-left w-full md:w-auto">
           <h3 className="text-white font-semibold mb-6 uppercase tracking-wider text-sm">Contact Us</h3>
-          <div className="space-y-4 flex flex-col items-center md:items-start">
-            <div className="flex items-start justify-center md:justify-start">
+          <div className="space-y-4 flex flex-col items-start">
+            <div className="flex items-start justify-start">
               <Icon icon="mdi:map-marker" className="text-brown text-xl mr-3 mt-1 flex-shrink-0" />
               <span>Lemlemitu Bahir Dar Commercial Center,<br /> Bahir Dar, Ethiopia</span>
             </div>
-            <div className="flex flex-col md:items-start text-center md:text-left">
-              <div className="flex items-center justify-center md:justify-start">
+            <div className="flex flex-col items-start text-left">
+              <div className="flex items-center justify-start">
                 <Icon icon="mdi:phone" className="text-brown text-xl mr-3 flex-shrink-0" />
                 <span>+251 936 337 889</span>
               </div>
-              <div className="flex items-center justify-center md:justify-start md:ml-8 mt-1">
+              <div className="flex items-center justify-start ml-8 mt-1">
                 <span>+251 966 206 636</span>
               </div>
-              <div className="flex items-center justify-center md:justify-start md:ml-8 mt-1">
+              <div className="flex items-center justify-start ml-8 mt-1">
                 <span>+251 966 206 640</span>
               </div>
             </div>
-            <div className="flex items-center justify-center md:justify-start">
+            <div className="flex items-center justify-start">
               <Icon icon="mdi:email" className="text-brown text-xl mr-3 flex-shrink-0" />
               <span>contact@agelgileco-package.com</span>
             </div>
@@ -66,7 +66,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="container pt-8 border-t border-gray-800 text-center text-sm text-gray-500">
+      <div className="container pt-8 border-t border-gray-800 text-left text-sm text-gray-500">
         <p>© {new Date().getFullYear()} Agelgil Eco Packaging. All rights reserved.</p>
       </div>
     </footer>
